@@ -11,16 +11,16 @@ services:
     volumes:
       - ./services/extract:/extract
     ports:
-      - "3001:3001"
+      - "3001:3000"
   search:
     build: services/search/
     volumes:
       - ./services/search:/search
     ports:
-      - "3003:3002"
+      - "3002:3000"
   reply:
     build: services/reply/
     volumes:
       - ./services/reply:/reply
     ports:
-      - "3002:3003"
+      - "3003:3000"
