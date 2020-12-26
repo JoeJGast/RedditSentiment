@@ -1,0 +1,11 @@
+{
+    "positiveAxisSubreddits": [
+        "theDonald",
+        "Conservative"
+    ]
+    ,"negativeAxisSubreddits": [
+        "cats"
+        ,"dogs"
+    ]
+    ,"minimumCommentWords": 12
+}
