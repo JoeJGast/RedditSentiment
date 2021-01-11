@@ -13,17 +13,15 @@ export default class RedditRequestHandler extends RequestHandler {
         const snoowrap = new Snoowrap({
             // TODO: add below to config
             userAgent: `Windows.0Ny3yNqnnjaLUw.1.0.0`,
-            clientId: '47sNetBQnuGlhA',
-            clientSecret: this.config.authentication.secret,
+            clientId: this.config.authentication.clientId,
+            clientSecret: this.config.authentication.clientSecret,
             username: this.config.authentication.userName,
             password: this.config.authentication.encodedPassword
         });
         snoowrap.getSubreddit("politics").getTop().then(submissions =>{
             let curSub = submissions[0];
             // TODO: pull request for snoowrap to fix Listing typedef.
-            let comments = curSub.comments.fetchMore({amount:10}).then(comments =>{
-                comments
-            });
+            let comments = curSub.comments.fetchMore({amount:10}).forEach((item) => console.log(item))
         });
     }
     
