@@ -1,0 +1,16 @@
+{
+    "auth": {
+        "userName": "yourUserName",
+        "password": "yourPassword",
+        "secret": "yourSecret"
+    },
+    "positiveAxisSubreddits": [
+        "theDonald",
+        "Conservative"
+    ],
+    "negativeAxisSubreddits": [
+        "cats",
+        "dogs"
+    ],
+    "minimumCommentWords": 12
+}
