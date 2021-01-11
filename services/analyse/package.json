@@ -1,0 +1,31 @@
+{
+  "name": "commentanalyzer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeJGast/RedditSentiment.git"
+  },
+  "keywords": [
+    "reddit",
+    "comment"
+  ],
+  "author": "Joe Gast",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoeJGast/RedditSentiment/issues"
+  },
+  "homepage": "https://github.com/JoeJGast/RedditSentiment#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.19",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "snoowrap": "^1.22.0"
+  }
+}
