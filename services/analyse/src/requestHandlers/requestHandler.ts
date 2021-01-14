@@ -13,7 +13,8 @@ export class RequestHandler{
                 userName: config.auth.userName,
                 // TODO encode password
                 encodedPassword: config.auth.password,
-                secret: config.auth.secret
+                clientId: config.auth.clientId, 
+                clientSecret: config.auth.clientSecret
             }
         }
     }    
@@ -23,6 +24,7 @@ interface RequestHandlerConfig{
     authentication: {
         userName?: string
         encodedPassword?: string 
-        secret?: string
+        clientId?: string
+        clientSecret?: string
     }
 }
