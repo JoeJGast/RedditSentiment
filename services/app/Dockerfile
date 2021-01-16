@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-#COPY ["package.json", "package-lock.json*", "./"]
+COPY ["package.json", "package-lock.json*", "./"]
 
 
 RUN npm install typescript -g
@@ -17,8 +17,10 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+RUN tsc --build
+
 EXPOSE 3000
-CMD [ "node", "server.js" ]
+CMD [ "node", "dist/index.js" ]
 
 
 
