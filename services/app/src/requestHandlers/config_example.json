@@ -2,7 +2,8 @@
     "auth": {
         "userName": "yourUserName",
         "password": "yourPassword",
-        "secret": "yourSecret"
+        "clientId": "yourClientId",
+        "clientSecret": "yourClienSecret"
     },
     "positiveAxisSubreddits": [
         "theDonald",
