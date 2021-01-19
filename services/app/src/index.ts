@@ -1,6 +1,9 @@
 import RedditRequestHandler from "./requestHandlers/redditRequestHandler/redditRequestHandler"
+import PgDatabaseAdapter from "./DatabaseAdapters/PgDatabaseAdapter/PgDatabaseAdapter";
 
-let requestHandler = new RedditRequestHandler();
+
+// let requestHandler = new RedditRequestHandler();
+let pgDatabaseAdapter = new PgDatabaseAdapter();
 //let databaseAdapter = new postgresDBAdapter()
 
 //let analyzer = new dataAnalyser
