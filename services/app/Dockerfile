@@ -17,7 +17,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-RUN tsc --build
+RUN tsc --build && cp ./src/requestHandlers/config.json ./dist/requestHandlers/
 
 EXPOSE 3000
 CMD [ "node", "dist/index.js" ]
