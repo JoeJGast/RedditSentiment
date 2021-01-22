@@ -1,30 +1,18 @@
 // TODO: switch to d.ts format for method definitions.
 
-export default class DatabaseAdapter{
+export default interface DatabaseAdapter{
 
-    constructor(){
-        this.connect()    
-    }
     // Handle database connection and errors
-    public connect():boolean {
-        return true;
-    }
+    // connect(): any 
 
     // Install schema 
-    public install():boolean {
-        return true;
-    }
-
+    install(): boolean 
 
     // Handles any clean up
-    public close():boolean{
-        return true;
-    }
+    close(): boolean
 
     // Single point of entry for queries
     // TODO: Consider genericizing this method <T>
-    public query(str:string):string {
-        return "JSON data";
-    }
+    query(queryStr: string, params: string[]): Promise<string>
 
 }
