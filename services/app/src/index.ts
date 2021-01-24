@@ -8,12 +8,17 @@ let DatabaseAdapter = new PgDatabaseAdapter();
 // Test insertion into collection
 DatabaseAdapter.query(
     'insert into collection(col_id, col_name, last_refresh) values($1, $2, DEFAULT)',
-    ['t21tk121', 'bigPeePee'])
-    .then(res => console.log(res)).catch(err => console.log(err));
+    ['txvs1s121', 'mySubreddit'])
+    .then(res => {
+        console.log(res)
+        return DatabaseAdapter.query('select * from collection')
+    })
+    .then(res => console.log(res)).catch(err => console.log(err))
+    .catch(err => console.log(err));
 
-// Test select statement
-DatabaseAdapter.query('select * from collection')
-    .then(res => console.log(res)).catch(err => console.log(err));
+// // Test select statement
+// DatabaseAdapter.query('select * from collection')
+//     .then(res => console.log(res)).catch(err => console.log(err));
 
 //let databaseAdapter = new postgresDBAdapter()
 
