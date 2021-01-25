@@ -21,18 +21,23 @@ export default class PgDatabaseAdapter implements DatabaseAdapter {
         })
     }
 
-    // Install schema 
+    // Install schema
     public install(): boolean {
         let sql: string[] = fs.readFileSync(path.join(__dirname, 'init_db.sql'))
             .toString().split(';').filter((str: string) => str.length > 0);
         // console.log(sql.length);
-        sql.forEach(async (statement: string) => {
-            await this.query(statement.trim()).catch(err => {
+        sql.forEach((statement: string) => {
+            try {
+                this.query(statement.trim()).catch(e =>{
+                    console.log(`Error${e}`)
+                })
+                console.log('+++++ table exist or was sucessfully created');
+            }catch (err){
                 console.log(err)
                 console.log('---- Could not initialize table')
                 return false;
-            });
-            console.log('+++++ table exist or was sucessfully created');
+            };
+
         });
         return true;
     }

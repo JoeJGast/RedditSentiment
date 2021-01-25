@@ -16,6 +16,9 @@ DatabaseAdapter.query(
     .then(res => console.log(res)).catch(err => console.log(err))
     .catch(err => console.log(err));
 
+    while(true){
+        continue;
+    }
 // // Test select statement
 // DatabaseAdapter.query('select * from collection')
 //     .then(res => console.log(res)).catch(err => console.log(err));
