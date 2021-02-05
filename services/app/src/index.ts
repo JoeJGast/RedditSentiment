@@ -5,16 +5,21 @@ import PgDatabaseAdapter from "./DatabaseAdapters/PgDatabaseAdapter/PgDatabaseAd
 // let requestHandler = new RedditRequestHandler();
 let DatabaseAdapter = new PgDatabaseAdapter();
 
+
 // Test insertion into collection
-DatabaseAdapter.query(
-    'insert into collection(col_id, col_name, last_refresh) values($1, $2, DEFAULT)',
-    ['txvs1s121', 'mySubreddit'])
-    .then(res => {
-        console.log(res)
-        return DatabaseAdapter.query('select * from collection')
-    })
-    .then(res => console.log(res)).catch(err => console.log(err))
-    .catch(err => console.log(err));
+DatabaseAdapter.install().then(res => {
+    if(res){
+        DatabaseAdapter.query(
+            'insert into collection(col_id, col_name, last_refresh) values($1, $2, DEFAULT)',
+            ['t1231xxss121', 'wallstreetbets'])
+            .then(res => DatabaseAdapter.query('select * from collection'))
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        }
+    else{
+        console.log("Failed to initialize or connect to postgres db")
+    }
+})
 
 // // Test select statement
 // DatabaseAdapter.query('select * from collection')

@@ -18,8 +18,8 @@ RUN npm install
 RUN tsc --build
 # copy Reddit configurations
 RUN cp ./src/requestHandlers/config.json ./dist/requestHandlers/
-# copy db install sql script 
-RUN cp ./src/DatabaseAdapters/PgDatabaseAdapter/init_db.sql ./dist/DatabaseAdapters/PgDatabaseAdapter/
+# copy sql scripts
+RUN cp ./src/DatabaseAdapters/PgDatabaseAdapter/Schema/* ./dist/DatabaseAdapters/PgDatabaseAdapter/Schema/
 
 EXPOSE 3000
 CMD [ "node", "dist/index.js" ]

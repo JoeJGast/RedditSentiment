@@ -6,7 +6,7 @@ export default interface DatabaseAdapter{
     // connect(): any 
 
     // Install schema 
-    install(): boolean 
+    install(): Promise<boolean>
 
     // Handles any clean up
     close(): boolean

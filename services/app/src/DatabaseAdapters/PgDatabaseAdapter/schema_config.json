@@ -1,0 +1,7 @@
+{
+    "schema_order": [
+        "collection.sql",
+        "post.sql",
+        "comment.sql"
+    ]
+}
