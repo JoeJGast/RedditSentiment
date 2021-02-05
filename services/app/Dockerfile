@@ -17,9 +17,16 @@ RUN npm install
 # compile typescript
 RUN tsc --build
 # copy Reddit configurations
-RUN cp ./src/requestHandlers/config.json ./dist/requestHandlers/
+# RUN cp ./src/requestHandlers/config.json ./dist/requestHandlers/
+# # copy sql scripts
+# RUN mkdir ./dist/DatabaseAdapters/PgDatabaseAdapter/Schema && \
+# cp ./src/DatabaseAdapters/PgDatabaseAdapter/Schema/* ./dist/DatabaseAdapters/PgDatabaseAdapter/Schema/
+
+COPY ./src/requestHandlers/config.json ./dist/requestHandlers/
 # copy sql scripts
-RUN cp ./src/DatabaseAdapters/PgDatabaseAdapter/Schema/* ./dist/DatabaseAdapters/PgDatabaseAdapter/Schema/
+RUN mkdir ./dist/DatabaseAdapters/PgDatabaseAdapter/Schema
+COPY ./src/DatabaseAdapters/PgDatabaseAdapter/Schema/* ./dist/DatabaseAdapters/PgDatabaseAdapter/Schema/
+
 
 EXPOSE 3000
 CMD [ "node", "dist/index.js" ]
