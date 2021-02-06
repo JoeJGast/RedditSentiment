@@ -24,7 +24,7 @@
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": ["ms-azuretools.vscode-docker","coenraads.bracket-pair-colorizer","dotjoshjohnson.xml","vmsynkov.colonize","eamodio.gitlens"
+	"extensions": ["ms-azuretools.vscode-docker","coenraads.bracket-pair-colorizer","dotjoshjohnson.xml","vmsynkov.colonize","eamodio.gitlens","ckolkman.vscode-postgres"
 	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
