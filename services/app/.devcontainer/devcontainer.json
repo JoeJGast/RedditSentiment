@@ -15,7 +15,7 @@
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": ["ms-azuretools.vscode-docker","coenraads.bracket-pair-colorizer","dotjoshjohnson.xml","vmsynkov.colonize","hediet.vscode-drawio"],
+	"extensions": ["ms-azuretools.vscode-docker","coenraads.bracket-pair-colorizer","dotjoshjohnson.xml","vmsynkov.colonize"],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	 "forwardPorts": [3000],
